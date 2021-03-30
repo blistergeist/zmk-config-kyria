@@ -51,25 +51,58 @@
 // |       |  Z  |  X  |  C   |  V   |  B   |         |         |  |         |         |  N   |  M    |  ,    |  .   |   /   | CAPS |
 //                     |      | TAB  |LWRESC|  SPACE  |         |  |         |SHFT/BKSP|RSEDEL| ENTER |       |
 			bindings = <
-	&none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                   /**/                    &kp Y   &kp U           &kp I           &kp O        &kp P       		&none
-	&none   &mt_l LGUI A    &mt_l LALT S    &mt_s LSHFT D   &mt_s LCTRL F   &kp G                           /**/                    &kp H   &mt_s LCTRL J   &mt_s LSHFT K   &mt_l LALT L &mt_l LGUI SEMI   	&kp SQT
-	&none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B &none     &none   /**/    &none   &none   &kp N   &kp M           &kp COMMA       &kp DOT      &kp FSLH       	&kp CAPS
+	&none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                   /**/                    		&kp Y   		&kp U           &kp I           &kp O        &kp P       		&none
+	&none   &mt_l LGUI A    &mt_l LALT S    &mt_s LSHFT D   &mt_s LCTRL F   &kp G                           /**/                    		&kp H   		&mt_s LCTRL J   &mt_s LSHFT K   &mt_l LALT L &mt_l LGUI SEMI   	&kp SQT
+	&none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B &none				/**/			&none   		&kp N   		&kp M           &kp COMMA       &kp DOT      &kp FSLH       	&kp CAPS
 	                                        &none           &kp TAB         &lt LOWER ESC &kp SPACE &none   /**/    &none   &mt LSHFT BSPC  &lt RAISE DEL   &kp ENTER       &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP) &inc_dec_kp LC(Z) LC(Y)>;
 		};
+
 		colemak {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |       |  Q  |  W  |  F   |  P   |  G   |                                          |  J   |  L    |  U    |  Y   |   ;   |      |
 // |       |  A  |  R  |  S   |  T   |  D   |                                          |  H   |  N    |  E    |  I   |   O   |   '  |
-// |       |  Z  |  X  |  C   |  V   |  B   |         |         |  |         |         |  K   |  M    |  ,    |  .   |   /   | CAPS |
+// |       |  Z  |  X  |  C   |  V   |  B   |         |                      |         |  K   |  M    |  ,    |  .   |   /   | CAPS |
 //                     |      | TAB  |LWRESC|  SPACE  |         |  |         |SHFT/BKSP|RSEDEL| ENTER |       |
 			bindings = <
-	&none   &kp Q           &mt_l LC(W) W   &kp F           &kp P   		&kp G                   		/**/                    &kp J   &kp L           &kp U           &kp Y        &kp SEMI       &none
-	&none   &mt_l LGUI A    &mt_l LALT R    &mt_s LSHFT S   &mt_s LCTRL T   &kp D                           /**/                    &kp H   &mt_s LCTRL N   &mt_s LSHFT E   &mt_l LALT I &mt_l LGUI O   &kp SQT
-	&none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B &none     &none   /**/    &none   &none   &kp K   &kp M           &kp COMMA       &kp DOT      &kp FSLH       &kp CAPS
+	&none   &kp Q           &mt_l LC(W) W   &kp F           &kp P   		&kp G                   		/**/                    		&kp J   		&kp L           &kp U           &kp Y        &kp SEMI       &none
+	&none   &mt_l LGUI A    &mt_l LALT R    &mt_s LSHFT S   &mt_s LCTRL T   &kp D                           /**/                    		&kp H   		&mt_s LCTRL N   &mt_s LSHFT E   &mt_l LALT I &mt_l LGUI O   &kp SQT
+	&none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B &none				/**/			&none   		&kp K   		&kp M           &kp COMMA       &kp DOT      &kp FSLH       &kp CAPS
 	                                        &none           &kp TAB         &lt LOWER ESC &kp SPACE &none   /**/    &none   &mt LSHFT BSPC  &lt RAISE DEL   &kp ENTER       &none
+			>;
+
+			sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP) &inc_dec_kp LC(Z) LC(Y)>;
+		};
+
+		raise {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |       |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |   &   |   *   |  _   |   =   |      |
+// |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                                          |      |  LEFT |  DOWN |  UP  | RIGHT |      |
+// |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |         |                      |         |      |  HOME |  PGDN | PGUP |  END  |      |
+//                     | PLAY |      |ADJUST|         |         |  |         |         |      |       |       |
+			bindings = <
+	&none   &kp EXCL   		&kp AT       	&kp HASH    		&kp DOLLAR  	&kp PERCENT               	/**/                    &kp CARET   &kp AMPS        	&kp STAR        	&kp SEMI       	&none				&none
+	&none   &mt_l LGUI F1   &mt_l LALT F2   &mt_s LSHFT F3  	&mt_s LCTRL F4  &kp F5                  	/**/                    &kp H   	&mt_s LCTRL LEFT   	&mt_s LSHFT DOWN   	&mt_l LALT UP  	&mt_l LGUI RIGHT	&kp SQT
+	&none   &kp F6  		&kp F7          &kp F8         		&kp F9          &kp F10 	&none			/**/			&none   &kp K   	&kp M           	&kp COMMA       	&kp DOT     	&kp FSLH       		&kp CAPS
+	                                        &kp C_PLAY_PAUSE	&trans          &mo ADJUST 	&trans	&none   /**/    &none   &trans  &trans  	&trans       		&none
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LC(Z) LC(Y)>;
+		};
+
+		lower {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |       |     |     |   {  |  }  |      |                                          |  +   |  7    |  8    |  9   |   *   |      |
+// |       |     |     |   (  |  )  |  `   |                                          |  -   |  4    |  5    |  6   |   |   |      |
+// |       |     |     |   [  |  ]  |  ~   |         |                      |         |  =   |  1    |  2    |  3   |   \   |      |
+//                     |      |     |      |         |         |  |         |  SPACE  |ADJUST|  0    |       |
+			bindings = <
+	&none	&none	&kp TILDE   &kp LBKT	&kp RBKT  	&none              			/**/                    	&kp PLUS   	&kp N7  &kp N8	&kp N9  &kp STAR	&none
+	&none   &none	&kp UNDER  	&kp LPAR    &kp RPAR   	&kp GRAVE                   /**/                    	&kp MINUS	&kp N4	&kp N5  &kp N6	&kp PIPE	&none
+	&none   &none	&kp PLUS	&kp LBRC    &kp RBRC   	&kp TILDE	&none			/**/			&none   	&kp EQUAL	&kp N1	&kp N2	&kp N3	&kp BSLH	&none
+	                    		&none       &trans      &trans		&trans 	&none   /**/    &none   &kp SPACE 	&mo ADJUST  &kp N0 	&none
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP) &inc_dec_kp LC(Z) LC(Y)>;
