@@ -11,8 +11,8 @@
 
 
 //Layer definitions
-#define QWERTY 0
-#define COLEMAK 1
+#define COLEMAK 0
+#define QWERTY 1
 #define RAISE 2
 #define LOWER 3
 #define AOE 4
@@ -47,22 +47,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		qwerty {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |       |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |      |
-// |       |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// |       |  Z  |  X  |  C   |  V   |  B   |         |         |  |         |         |  N   |  M    |  ,    |  .   |   /   | CAPS |
-//                     |      | TAB  |LWRESC|  SPACE  |         |  |         |SHFT/BKSP|RSEDEL| ENTER |       |
-			bindings = <
-	&none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                   	/**/                    			&kp Y   		&kp U           &kp I           &kp O        &kp P       		&none
-	&none   &mt_l LGUI A    &mt_l LALT S    &mt_s LSHFT D   &mt_s LCTRL F   &kp G                           	/**/                    			&kp H   		&mt_s LCTRL J   &mt_s LSHFT K   &mt_l LALT L &mt_l LGUI SEMI   	&kp SQT
-	&none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B &kp LPAR	&kp RPAR	/**/	&kp LBKT	&kp RBKT		&kp N   		&kp M           &kp COMMA       &kp DOT      &kp FSLH       	&kp CAPS
-	                                        &none           &kp TAB         &lt LOWER ESC &kp SPACE &kp LBRC	/**/    &kp RBRC   	&mt LSHFT BSPC  &lt RAISE DEL   &kp ENTER       &none
-			>;
-
-			sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP) &inc_dec_kp LC(Z) LC(Y)>;
-		};
-
+	
 		colemak {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |       |  Q  |  W  |  F   |  P   |  G   |                                          |  J   |  L    |  U    |  Y   |   ;   |      |
@@ -72,8 +57,24 @@
 			bindings = <
 	&none   &kp Q           &mt_l LC(W) W   &kp F           &kp P   		&kp G                   		/**/                    		&kp J   		&kp L           &kp U           &kp Y        &kp SEMI       &none
 	&none   &mt_l LGUI A    &mt_l LALT R    &mt_s LSHFT S   &mt_s LCTRL T   &kp D                           /**/                    		&kp H   		&mt_s LCTRL N   &mt_s LSHFT E   &mt_l LALT I &mt_l LGUI O   &kp SQT
-	&none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B &none				/**/			&none   		&kp K   		&kp M           &kp COMMA       &kp DOT      &kp FSLH       &kp CAPS
+	&none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B &none		&none	/**/	&none	&none   		&kp K   		&kp M           &kp COMMA       &kp DOT      &kp FSLH       &kp CAPS
 	                                        &none           &kp TAB         &lt LOWER ESC &kp SPACE &none   /**/    &none   &mt LSHFT BSPC  &lt RAISE DEL   &kp ENTER       &none
+			>;
+
+			sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP) &inc_dec_kp LC(Z) LC(Y)>;
+		};
+
+		qwerty {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |       |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |      |
+// |       |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+// |       |  Z  |  X  |  C   |  V   |  B   |         |         |  |         |         |  N   |  M    |  ,    |  .   |   /   | CAPS |
+//                     |      | TAB  |LWRESC|  SPACE  |         |  |         |SHFT/BKSP|RSEDEL| ENTER |       |
+			bindings = <
+	&none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                   	/**/                    			&kp Y   		&kp U           &kp I           &kp O        &kp P       		&none
+	&none   &mt_l LGUI A    &mt_l LALT S    &mt_s LSHFT D   &mt_s LCTRL F   &kp G                           	/**/                    			&kp H   		&mt_s LCTRL J   &mt_s LSHFT K   &mt_l LALT L &mt_l LGUI SEMI   	&kp SQT
+	&none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B &kp LPAR	&none		/**/	&kp none	&kp RBKT		&kp N   		&kp M           &kp COMMA       &kp DOT      &kp FSLH       	&kp CAPS
+	                                        &none           &kp TAB         &lt LOWER ESC &kp SPACE &kp LBRC	/**/    &kp RBRC   	&mt LSHFT BSPC  &lt RAISE DEL   &kp ENTER       &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(PG_DN) LC(PG_UP) &inc_dec_kp LC(Z) LC(Y)>;
@@ -88,7 +89,7 @@
 			bindings = <
 	&none   &kp EXCL   		&kp AT       	&kp HASH    		&kp DOLLAR  	&kp PERCENT               	/**/                    &kp CARET   &kp AMPS        	&kp STAR        	&kp SEMI       	&none				&none
 	&none   &mt_l LGUI F1   &mt_l LALT F2   &mt_s LSHFT F3  	&mt_s LCTRL F4  &kp F5                  	/**/                    &none   	&mt_s LCTRL LEFT   	&mt_s LSHFT DOWN   	&mt_l LALT UP  	&mt_l LGUI RIGHT	&none
-	&none   &kp F6  		&kp F7          &kp F8         		&kp F9          &kp F10 	&none			/**/			&none   &none   	&kp HOME           	&kp PG_DN       	&kp PG_UP       &kp END       		&none
+	&none   &kp F6  		&kp F7          &kp F8         		&kp F9          &kp F10 	&none	&none	/**/	&none	&none   &none   	&kp HOME           	&kp PG_DN       	&kp PG_UP       &kp END       		&none
 	                                        &kp C_PLAY_PAUSE	&trans          &mo ADJUST 	&trans	&none   /**/    &none   &trans  &trans  	&trans       		&none
 			>;
 
@@ -104,7 +105,7 @@
 			bindings = <
 	&none	&none	&kp TILDE   &kp LBKT	&kp RBKT  	&none              			/**/                    	&kp PLUS   	    &kp N7  &kp N8	&kp N9  &kp STAR	&none
 	&none   &none	&kp UNDER  	&kp LPAR    &kp RPAR   	&kp GRAVE                   /**/                    	&kp MINUS	    &kp N4	&kp N5  &kp N6	&kp PIPE	&none
-	&none   &none	&kp PLUS	&kp LBRC    &kp RBRC   	&kp TILDE	&none			/**/			&none   	&kp EQUAL	    &kp N1	&kp N2	&kp N3	&kp BSLH	&none
+	&none   &none	&kp PLUS	&kp LBRC    &kp RBRC   	&kp TILDE	&none	&none	/**/	&none	&none   	&kp EQUAL	    &kp N1	&kp N2	&kp N3	&kp BSLH	&none
 	                    		&none       &trans      &trans		&trans 	&none   /**/    &none   &kp SPACE 	&mt ADJUST N0   &kp DOT &none
 			>;
 
@@ -120,7 +121,7 @@
 			bindings = <
 	&bootloader	    &none	&none       &none           &none           &none              			            /**/                    &none   	        &none           &none	        &none       &none	        &none
 	&none           &none	&bt BT_CLR  &bt BT_SEL 1    &bt BT_SEL 2   	&kp LG(LS(LEFT))                        /**/                    &kp LG(LS(RIGHT))   &kp LG(LEFT)	&kp LG(DOWN)    &kp LG(UP)	&kp LG(RIGHT)	&none
-	&kp LG(LS(S))   &none	&none	    &none           &to AOE   	    &to MINE	        &none               /**/			&none   &to COLEMAK	        &to QWERTY	    &none	        &none	    &none	        &none
+	&kp LG(LS(S))   &none	&none	    &none           &to AOE   	    &to MINE	        &none       &none	/**/	&none	&none   &to COLEMAK	        &to QWERTY	    &none	        &none	    &none	        &none
 	                    		        &none           &trans          &trans		        &trans 	    &none   /**/    &none   &trans 	&trans              &trans           &none
 			>;
 
