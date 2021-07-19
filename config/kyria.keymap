@@ -13,8 +13,8 @@
 //Layer definitions
 #define COLEMAK 0
 #define QWERTY 1
-#define RAISE 2
-#define LOWER 3
+#define LOWER 2
+#define RAISE 3
 #define AOE 4
 #define AOERAISE 5
 #define MINE 6
