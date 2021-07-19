@@ -88,7 +88,7 @@
 //                     |     |     |     |         |         |  |         |         | ADJ |     |     |
             bindings = <
     &none   &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR  &kp PERCENT                 /**/                    &kp CARET   &kp AMPS    &kp STAR    &kp LBRC    &kp RBRC    &none
-    &none   &kp MINUS   &kp UNDER   &kp LPAR    &kp RPAR    &kp GRAVE                   /**/                    &kp TILDE   &kp LPAR    &kp RPAR    &kp LBKT    &kp RBKT    &none
+    &none   &kp MINUS   &kp UNDER   &kp EQUAL   &kp PLUS    &kp GRAVE                   /**/                    &kp TILDE   &kp LPAR    &kp RPAR    &kp LBKT    &kp RBKT    &none
     &kp F12 &kp F1	    &kp F2      &kp F3      &kp F4      &kp F5      &none   &none   /**/    &none   &none   &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
                                     &none       &none       &none       &none   &none   /**/    &none   &none   &mo ADJUST  &kp DOT     &none
             >;
