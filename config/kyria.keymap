@@ -93,7 +93,7 @@
                                     &none       &none       &none       &none   &none   /**/    &none   &none   &mo ADJUST  &kp DOT     &none
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp LC(+) LC(-)>;
+            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp LC(PLUS) LC(MINUS)>;
         };
 
         raise {
