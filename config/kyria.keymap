@@ -15,11 +15,9 @@
 #define QWERTY 1
 #define LOWER 2
 #define RAISE 3
-#define AOE 4
-#define AOERAISE 5
-#define MINE 6
-#define MINERAISE 7
-#define ADJUST 8
+#define MINE 4
+#define MINERAISE 5
+#define ADJUST 6
 
 
 / {
